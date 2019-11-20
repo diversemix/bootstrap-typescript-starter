@@ -6,7 +6,9 @@ run:
 	make start
 
 build-container:
-	docker build . -t ${IMAGE_NAME}
+	- yarn
+	- yarn build
+	- docker build . -t ${IMAGE_NAME}
 
 start: build-container
 	- docker run -td -p 8080:8080 --name ${CONTAINER} ${IMAGE_NAME}

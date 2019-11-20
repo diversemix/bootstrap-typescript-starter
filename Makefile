@@ -1,0 +1,21 @@
+
+IMAGE_NAME = static-example:test
+CONTAINER = test_example
+
+run:
+	make start
+
+build-container:
+	docker build . -t ${IMAGE_NAME}
+
+start: build-container
+	- docker run -td -p 8080:8080 --name ${CONTAINER} ${IMAGE_NAME}
+	- docker ps
+	- echo "OPEN: http://localhost:8080"
+
+stop:
+	- docker stop ${CONTAINER}
+	- docker rm ${CONTAINER}
+
+clean: stop
+	docker rmi ${IMAGE_NAME}

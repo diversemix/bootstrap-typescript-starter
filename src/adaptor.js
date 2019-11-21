@@ -1,16 +1,13 @@
 console.log('loading...');
 
-async function search() {
+function search() {
     return new Promise(resolve => {
         setTimeout(() => resolve(), 2000);
     });
 }
 
-function getMessage() {
-    return window.library.doSomething();
-}
-
 function doSearch() {
+    // TODO: Search the list of items
     console.log('dothis');
     console.log($('#search-text')[0].value);
     $('#search-button').addClass('d-none');
@@ -21,12 +18,16 @@ function doSearch() {
     });
 }
 
-$('#left-list a').on('click', function(e) {
-    console.log(e);
+$('#item-list a').on('click', function(e) {
+    // TODO: Update results section
 });
 
 $(document).ready(function() {
-    console.log($('#left-list'));
-    $('#left-list')[0].children = [];
-    console.log(getMessage());
+    console.log('getting items...');
+    window.library.getItems().then(items => {
+        console.log('rendering items...');
+        items.forEach(item => {
+            $('#item-list').append(window.library.renderItem(item));
+        });
+    });
 });

@@ -12,7 +12,7 @@
     }
 
     .list-group {
-      max-height: 400px;
+      max-height: 600px;
       margin-bottom: 10px;
       overflow-y: scroll;
     }
@@ -26,10 +26,10 @@
   <div class="container">
     <div class="row first-row">
       <div class="col-12 col-sm-6 p-2">
-        <input type="text" class="form-control" id="search-text" aria-describedby="helpId" placeholder="doink">
+        <input type="text" class="form-control" id="search-text" aria-describedby="helpId" placeholder="Enter search text here...">
       </div>
       <div class="col-12 col-sm-6 p-2">
-        <input id="search-button" data-testid="search-button" onclick="doSearch()" class="btn btn-primary" type="button" value="Search">
+        <input id="search-button" onclick="doSearch()" class="btn btn-primary" type="button" value="Search">
         <div id="spinner" class="spinner-border d-none"></div>
       </div>
     </div>
@@ -37,45 +37,12 @@
     <div class="row">
       <div class="col-12 col-sm-6 border-right">
         <div class="panel-body m-4">
-          <div class="list-group border" id="left-list" role="tablist">
-              <a data-toggle="list" href="#" class="list-group-item list-group-item-action active">
-                  <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">List group item heading</h5>
-                    <small>3 days ago</small>
-                  </div>
-                  <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                  <small>Donec id elit non mi porta.</small>
-                </a>
-            <a class="list-group-item list-group-item-action" id="list-home-list" data-toggle="list"
-              href="#list-home" role="tab" aria-controls="home">Home</a>
-            <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list"
-              href="#list-profile" role="tab" aria-controls="profile">Profile</a>
-            <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list"
-              href="#list-messages" role="tab" aria-controls="messages">Messages</a>
-            <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list"
-              href="#list-settings" role="tab" aria-controls="settings">Settings</a>
+          <div class="list-group border" id="item-list" role="tablist">
           </div>
         </div>
       </div>
       <div class="col-12 col-sm-6">
-        <div class="panel-body m-4">
-          <ul class="list-group border">
-            <li class="list-group-item">Cras justo odio Dapibus ac facilisis in Dapibus ac facilisis in Dapibus ac facilisis in Dapibus ac facilisis in   </li>
-            <li class="list-group-item">Dapibus ac facilisis in</li>
-            <li class="list-group-item">Morbi leo risus</li>
-            <li class="list-group-item">Porta ac consectetur ac</li>
-            <li class="list-group-item">Vestibulum at eros</li>
-            <li class="list-group-item">Cras justo odio</li>
-            <li class="list-group-item">Dapibus ac facilisis in</li>
-            <li class="list-group-item">Morbi leo risus</li>
-            <li class="list-group-item">Porta ac consectetur ac</li>
-            <li class="list-group-item">Vestibulum at eros</li>
-            <li class="list-group-item">Cras justo odio</li>
-            <li class="list-group-item">Dapibus ac facilisis in</li>
-            <li class="list-group-item">Morbi leo risus</li>
-            <li class="list-group-item">Porta ac consectetur ac</li>
-            <li class="list-group-item">Vestibulum at eros</li>
-          </ul>
+        <div id="item-details" class="panel-body m-4">
         </div>
       </div>
     </div>

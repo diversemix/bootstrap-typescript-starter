@@ -1,12 +1,23 @@
 import * as fs from 'fs';
-import { getByTestId } from '@testing-library/dom';
+import { getByDisplayValue } from '@testing-library/dom';
 import '@testing-library/jest-dom/extend-expect';
-import { C } from './index';
+import { IItem, renderItem } from './index';
 
 describe('Unit Tests', (): void => {
-    describe('class C', (): void => {
+    describe('Item', (): void => {
         it('should have x as 10', (): void => {
-            expect(new C().getX()).toBe(10);
+            const testItem: IItem = {
+                name: 'Bob',
+                username: 'widget',
+                email: 'email',
+                company: { name: 'company', catchPhrase: 'cp' },
+            };
+            const text = renderItem(testItem);
+            expect(text).toContain(testItem.name);
+            expect(text).toContain(testItem.username);
+            expect(text).toContain(testItem.email);
+            expect(text).toContain(testItem.company.name);
+            expect(text).toContain(testItem.company.catchPhrase);
         });
     });
 });
@@ -24,8 +35,9 @@ describe('HTML Unit Tests', (): void => {
     it('should render', (): void => {
         expect(root).not.toBeNull();
 
-        const button = getByTestId(root, 'search-button');
+        const button = getByDisplayValue(root, 'Search');
         expect(button).not.toBeNull();
         expect(button.hasAttribute('onclick')).not.toBeNull();
+        expect(button.classList).toContain('btn');
     });
 });

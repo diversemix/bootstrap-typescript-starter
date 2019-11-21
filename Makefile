@@ -7,6 +7,7 @@ run:
 
 build-container:
 	yarn
+	yarn lint
 	yarn test
 	yarn build
 	docker build . -t ${IMAGE_NAME}

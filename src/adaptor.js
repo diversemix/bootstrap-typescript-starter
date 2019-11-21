@@ -7,7 +7,7 @@ async function search() {
 }
 
 function getMessage() {
-    return window.library.doSomething();
+  return window.library.doSomething();
 }
 
 function doSearch() {

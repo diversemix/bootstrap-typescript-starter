@@ -16,8 +16,7 @@ build-container: build
 
 start: build-container
 	docker run -td -p 8080:8080 --name ${CONTAINER} ${IMAGE_NAME}
-	docker ps
-	echo "OPEN: http://localhost:8080"
+	yarn test:browser
 
 stop:
 	- docker stop ${CONTAINER}

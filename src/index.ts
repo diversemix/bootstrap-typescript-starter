@@ -1,12 +1,12 @@
 export class C {
-  private x = 10;
-  getX = () => this.x;
-  setX = (newVal: number) => {
-    this.x = newVal;
-  };
+    private x = 10;
+    getX = (): number => this.x;
+    setX = (newVal: number): void => {
+        this.x = newVal;
+    };
 }
 
-export const doSomething = () => "something has been done!";
+export const doSomething = (): string => 'something has been done!';
 
 export const x = new C();
-export const y = { ...{ some: "value" } };
+export const y = { ...{ some: 'value' } };

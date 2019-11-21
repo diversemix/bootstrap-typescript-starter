@@ -5,11 +5,13 @@ CONTAINER = test_example
 run:
 	make start
 
-build-container:
+build:
 	yarn
 	yarn lint
 	yarn test
 	yarn build
+
+build-container: build
 	docker build . -t ${IMAGE_NAME}
 
 start: build-container

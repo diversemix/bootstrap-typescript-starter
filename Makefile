@@ -6,14 +6,15 @@ run:
 	make start
 
 build-container:
-	- yarn
-	- yarn build
-	- docker build . -t ${IMAGE_NAME}
+	yarn
+	yarn test
+	yarn build
+	docker build . -t ${IMAGE_NAME}
 
 start: build-container
-	- docker run -td -p 8080:8080 --name ${CONTAINER} ${IMAGE_NAME}
-	- docker ps
-	- echo "OPEN: http://localhost:8080"
+	docker run -td -p 8080:8080 --name ${CONTAINER} ${IMAGE_NAME}
+	docker ps
+	echo "OPEN: http://localhost:8080"
 
 stop:
 	- docker stop ${CONTAINER}

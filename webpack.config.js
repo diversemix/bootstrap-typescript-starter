@@ -2,7 +2,6 @@
 const path = require('path');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: path.resolve(__dirname, 'src'),
@@ -33,9 +32,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       hash: true,
       template: 'src/index.html'
-    }),
-    new CopyPlugin([
-      { from: './src/adaptor.js', to: path.resolve(__dirname, 'dist') }
-    ])
+    })
   ]
 };

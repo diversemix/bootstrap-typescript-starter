@@ -1,26 +1,6 @@
 import * as fs from 'fs';
 import { getByDisplayValue } from '@testing-library/dom';
 import '@testing-library/jest-dom/extend-expect';
-import { IItem, renderItem } from './index';
-
-describe('Unit Tests', (): void => {
-    describe('Item', (): void => {
-        it('should have x as 10', (): void => {
-            const testItem: IItem = {
-                name: 'Bob',
-                username: 'widget',
-                email: 'email',
-                company: { name: 'company', catchPhrase: 'cp' },
-            };
-            const text = renderItem(testItem);
-            expect(text).toContain(testItem.name);
-            expect(text).toContain(testItem.username);
-            expect(text).toContain(testItem.email);
-            expect(text).toContain(testItem.company.name);
-            expect(text).toContain(testItem.company.catchPhrase);
-        });
-    });
-});
 
 describe('HTML Unit Tests', (): void => {
     let root: HTMLElement;

@@ -8,9 +8,10 @@ module.exports = {
   entry: path.resolve(__dirname, 'src'),
 
   output: {
-    filename: 'bundle.js',
-    library: 'library',
+    filename: 'itemController.js',
     path: path.resolve(__dirname, 'dist'),
+    libraryTarget: 'var',
+    library: 'EntryPoint'
   },
 
   resolve: {

@@ -29,7 +29,7 @@
         <input type="text" class="form-control" id="search-text" aria-describedby="helpId" placeholder="Enter search text here...">
       </div>
       <div class="col-12 col-sm-6 p-2">
-        <input id="search-button" onclick="doSearch()" class="btn btn-primary" type="button" value="Search">
+        <input id="search-button" onclick="EntryPoint.doSearch()" class="btn btn-primary" type="button" value="Search">
         <div id="spinner" class="spinner-border d-none"></div>
       </div>
     </div>
@@ -60,8 +60,12 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
 
-  <script src="bundle.js"></script>
-  <script src="adaptor.js"></script>
+  <script src="itemController.js"></script>
+  <script>
+    window.onload = function () {
+      EntryPoint.run();
+    };
+  </script>
 </body>
 
 </html>
